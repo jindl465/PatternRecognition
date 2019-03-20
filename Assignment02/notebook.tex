@@ -280,11 +280,10 @@
     
 
     
-    \section{\textless{} Assignment 02 \textgreater{}}\label{assignment-02}
+    20164245 Hong Jin
 
-    \subsubsection{20164245 Hong Jin}\label{hong-jin}
-
-\subsubsection{Taylor Approximation}\label{taylor-approximation}
+    \section{Import packages numpy and
+matplotlib}\label{import-packages-numpy-and-matplotlib}
 
     \begin{Verbatim}[commandchars=\\\{\}]
 {\color{incolor}In [{\color{incolor}1}]:} \PY{k+kn}{import} \PY{n+nn}{numpy} \PY{k}{as} \PY{n+nn}{np}
@@ -292,42 +291,42 @@
 \end{Verbatim}
 
 
-    \subsection{1. Define a differentiable function that maps from real
-number to real
+    \section{Define a differentiable function that maps from real number to
+real
 number.}\label{define-a-differentiable-function-that-maps-from-real-number-to-real-number.}
 
-    \subsubsection{Define \$f(x) = x * sinx + x * cosx \$ as
+    \subsection{Define \$f(x) = x * sinx + x * cosx \$ as
 func(x)}\label{define-fx-x-sinx-x-cosx-as-funcx}
 
     \begin{Verbatim}[commandchars=\\\{\}]
-{\color{incolor}In [{\color{incolor}201}]:} \PY{k}{def} \PY{n+nf}{func}\PY{p}{(}\PY{n}{x}\PY{p}{)}\PY{p}{:}
-              \PY{n}{f} \PY{o}{=}  \PY{n}{x} \PY{o}{*} \PY{n}{np}\PY{o}{.}\PY{n}{cos}\PY{p}{(}\PY{n}{x}\PY{p}{)} \PY{o}{+} \PY{n}{x} \PY{o}{*} \PY{n}{np}\PY{o}{.}\PY{n}{sin}\PY{p}{(}\PY{n}{x}\PY{p}{)}
-              \PY{k}{return} \PY{n}{f}
+{\color{incolor}In [{\color{incolor}2}]:} \PY{k}{def} \PY{n+nf}{func}\PY{p}{(}\PY{n}{x}\PY{p}{)}\PY{p}{:}
+            \PY{n}{f} \PY{o}{=}  \PY{n}{x} \PY{o}{*} \PY{n}{np}\PY{o}{.}\PY{n}{sin}\PY{p}{(}\PY{n}{x}\PY{p}{)} \PY{o}{+} \PY{n}{x} \PY{o}{*} \PY{n}{np}\PY{o}{.}\PY{n}{cos}\PY{p}{(}\PY{n}{x}\PY{p}{)}
+            \PY{k}{return} \PY{n}{f}
 \end{Verbatim}
 
 
-    \subsection{2. Define a domain of the
+    \section{Define a domain of the
 function.}\label{define-a-domain-of-the-function.}
 
-    \subsubsection{\texorpdfstring{Domain :
+    \subsection{\texorpdfstring{Domain :
 \(-8<x<8\)}{Domain : -8\textless{}x\textless{}8}}\label{domain--8x8}
 
     \begin{Verbatim}[commandchars=\\\{\}]
-{\color{incolor}In [{\color{incolor}202}]:} \PY{n}{x} \PY{o}{=} \PY{n}{np}\PY{o}{.}\PY{n}{arange}\PY{p}{(}\PY{o}{\PYZhy{}}\PY{l+m+mi}{8}\PY{p}{,}\PY{l+m+mi}{8}\PY{p}{,}\PY{l+m+mf}{0.1}\PY{p}{)}
+{\color{incolor}In [{\color{incolor}3}]:} \PY{n}{x} \PY{o}{=} \PY{n}{np}\PY{o}{.}\PY{n}{arange}\PY{p}{(}\PY{o}{\PYZhy{}}\PY{l+m+mi}{8}\PY{p}{,}\PY{l+m+mi}{8}\PY{p}{,}\PY{l+m+mf}{0.1}\PY{p}{)}
 \end{Verbatim}
 
 
-    \subsection{3. Plot the function}\label{plot-the-function}
+    \section{Plot the function.}\label{plot-the-function.}
 
     \begin{Verbatim}[commandchars=\\\{\}]
-{\color{incolor}In [{\color{incolor}203}]:} \PY{n}{f} \PY{o}{=} \PY{n}{func}\PY{p}{(}\PY{n}{x}\PY{p}{)}
-          \PY{n}{plt}\PY{o}{.}\PY{n}{figure}\PY{p}{(}\PY{l+m+mi}{1}\PY{p}{)}
-          \PY{n}{plt}\PY{o}{.}\PY{n}{plot}\PY{p}{(}\PY{n}{x}\PY{p}{,} \PY{n}{f}\PY{p}{,} \PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{k}\PY{l+s+s1}{\PYZsq{}}\PY{p}{,} \PY{n}{label}\PY{o}{=}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{function}\PY{l+s+s2}{\PYZdq{}}\PY{p}{)}
+{\color{incolor}In [{\color{incolor}4}]:} \PY{n}{f} \PY{o}{=} \PY{n}{func}\PY{p}{(}\PY{n}{x}\PY{p}{)}
+        \PY{n}{plt}\PY{o}{.}\PY{n}{figure}\PY{p}{(}\PY{l+m+mi}{1}\PY{p}{)}
+        \PY{n}{plt}\PY{o}{.}\PY{n}{plot}\PY{p}{(}\PY{n}{x}\PY{p}{,} \PY{n}{f}\PY{p}{,} \PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{k}\PY{l+s+s1}{\PYZsq{}}\PY{p}{,} \PY{n}{label}\PY{o}{=}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{function}\PY{l+s+s2}{\PYZdq{}}\PY{p}{)}
 \end{Verbatim}
 
 
 \begin{Verbatim}[commandchars=\\\{\}]
-{\color{outcolor}Out[{\color{outcolor}203}]:} [<matplotlib.lines.Line2D at 0x274d650b160>]
+{\color{outcolor}Out[{\color{outcolor}4}]:} [<matplotlib.lines.Line2D at 0x1f29bacb3c8>]
 \end{Verbatim}
             
     \begin{center}
@@ -335,84 +334,83 @@ function.}\label{define-a-domain-of-the-function.}
     \end{center}
     { \hspace*{\fill} \\}
     
-    \subsection{4. Select a point within the
-domain}\label{select-a-point-within-the-domain}
+    \section{Select a point within the
+domain.}\label{select-a-point-within-the-domain.}
 
-\subsubsection{\texorpdfstring{Point of \(x\) : -3,
-4}{Point of x : -3, 4}}\label{point-of-x--3-4}
+    \subsection{\texorpdfstring{Point \(x\) : -3,
+4}{Point x : -3, 4}}\label{point-x--3-4}
 
     \begin{Verbatim}[commandchars=\\\{\}]
-{\color{incolor}In [{\color{incolor}236}]:} \PY{n}{p1} \PY{o}{=} \PY{o}{\PYZhy{}}\PY{l+m+mi}{3}
-          \PY{n}{p2} \PY{o}{=} \PY{l+m+mi}{4}
+{\color{incolor}In [{\color{incolor}5}]:} \PY{n}{p1} \PY{o}{=} \PY{o}{\PYZhy{}}\PY{l+m+mi}{3}
+        \PY{n}{p2} \PY{o}{=} \PY{l+m+mi}{4}
 \end{Verbatim}
 
 
-    \subsection{5. Mark the selected point on the
-function}\label{mark-the-selected-point-on-the-function}
+    \subsection{Mark the selected point on the
+function.}\label{mark-the-selected-point-on-the-function.}
 
     \begin{Verbatim}[commandchars=\\\{\}]
-{\color{incolor}In [{\color{incolor}237}]:} \PY{k}{def} \PY{n+nf}{origin\PYZus{}plot}\PY{p}{(}\PY{p}{)}\PY{p}{:}
-              \PY{n}{y1} \PY{o}{=} \PY{n}{func}\PY{p}{(}\PY{n}{p1}\PY{p}{)}
-              \PY{n}{y2} \PY{o}{=} \PY{n}{func}\PY{p}{(}\PY{n}{p2}\PY{p}{)}
-          
-              \PY{n}{plt}\PY{o}{.}\PY{n}{scatter}\PY{p}{(}\PY{n}{p1}\PY{p}{,}\PY{n}{y1}\PY{p}{,}\PY{n}{c} \PY{o}{=}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{r}\PY{l+s+s1}{\PYZsq{}}\PY{p}{,}\PY{n}{s} \PY{o}{=} \PY{l+m+mi}{50}\PY{p}{)}
-              \PY{n}{plt}\PY{o}{.}\PY{n}{scatter}\PY{p}{(}\PY{n}{p2}\PY{p}{,}\PY{n}{y2}\PY{p}{,} \PY{n}{c} \PY{o}{=}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{b}\PY{l+s+s1}{\PYZsq{}}\PY{p}{,}\PY{n}{s} \PY{o}{=} \PY{l+m+mi}{50}\PY{p}{)}
-              \PY{n}{plt}\PY{o}{.}\PY{n}{plot}\PY{p}{(}\PY{n}{x}\PY{p}{,}\PY{n}{f}\PY{p}{,}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{k}\PY{l+s+s1}{\PYZsq{}}\PY{p}{,}\PY{n}{label}\PY{o}{=}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{function}\PY{l+s+s2}{\PYZdq{}}\PY{p}{)}
-          
-          \PY{n}{origin\PYZus{}plot}\PY{p}{(}\PY{p}{)}
+{\color{incolor}In [{\color{incolor}6}]:} \PY{k}{def} \PY{n+nf}{origin\PYZus{}plot}\PY{p}{(}\PY{p}{)}\PY{p}{:}
+            \PY{n}{y1} \PY{o}{=} \PY{n}{func}\PY{p}{(}\PY{n}{p1}\PY{p}{)}
+            \PY{n}{y2} \PY{o}{=} \PY{n}{func}\PY{p}{(}\PY{n}{p2}\PY{p}{)}
+        
+            \PY{n}{plt}\PY{o}{.}\PY{n}{scatter}\PY{p}{(}\PY{n}{p1}\PY{p}{,}\PY{n}{y1}\PY{p}{,}\PY{n}{c} \PY{o}{=}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{r}\PY{l+s+s1}{\PYZsq{}}\PY{p}{,}\PY{n}{s} \PY{o}{=} \PY{l+m+mi}{30}\PY{p}{)}
+            \PY{n}{plt}\PY{o}{.}\PY{n}{scatter}\PY{p}{(}\PY{n}{p2}\PY{p}{,}\PY{n}{y2}\PY{p}{,} \PY{n}{c} \PY{o}{=}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{b}\PY{l+s+s1}{\PYZsq{}}\PY{p}{,}\PY{n}{s} \PY{o}{=} \PY{l+m+mi}{30}\PY{p}{)}
+            \PY{n}{plt}\PY{o}{.}\PY{n}{plot}\PY{p}{(}\PY{n}{x}\PY{p}{,}\PY{n}{f}\PY{p}{,}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{k}\PY{l+s+s1}{\PYZsq{}}\PY{p}{,}\PY{n}{label}\PY{o}{=}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{function}\PY{l+s+s2}{\PYZdq{}}\PY{p}{)}
+        
+        \PY{n}{origin\PYZus{}plot}\PY{p}{(}\PY{p}{)}
 \end{Verbatim}
 
 
     \begin{center}
-    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{output_14_0.png}
+    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{output_15_0.png}
     \end{center}
     { \hspace*{\fill} \\}
     
-    \subsection{6. Define the first-order Taylor approximation at the
-selected
-point}\label{define-the-first-order-taylor-approximation-at-the-selected-point}
+    \section{Define the first-order Taylor approximation at the selected
+point.}\label{define-the-first-order-taylor-approximation-at-the-selected-point.}
 
-    \subsubsection{\texorpdfstring{6-1. Define
+    \subsection{\texorpdfstring{Define
 \(f'(x) = sinx + x*cosx + cosx - x*sinx\) as derivate function
-d\_func(x)}{6-1. Define f'(x) = sinx + x*cosx + cosx - x*sinx as derivate function d\_func(x)}}\label{define-fx-sinx-xcosx-cosx---xsinx-as-derivate-function-d_funcx}
+d\_func(x)}{Define f'(x) = sinx + x*cosx + cosx - x*sinx as derivate function d\_func(x)}}\label{define-fx-sinx-xcosx-cosx---xsinx-as-derivate-function-d_funcx}
 
     \begin{Verbatim}[commandchars=\\\{\}]
-{\color{incolor}In [{\color{incolor}233}]:} \PY{k}{def} \PY{n+nf}{d\PYZus{}func}\PY{p}{(}\PY{n}{x}\PY{p}{)}\PY{p}{:}
-              \PY{n}{df} \PY{o}{=} \PY{n}{np}\PY{o}{.}\PY{n}{sin}\PY{p}{(}\PY{n}{x}\PY{p}{)} \PY{o}{+} \PY{n}{x}\PY{o}{*}\PY{n}{np}\PY{o}{.}\PY{n}{cos}\PY{p}{(}\PY{n}{x}\PY{p}{)} \PY{o}{+} \PY{n}{np}\PY{o}{.}\PY{n}{cos}\PY{p}{(}\PY{n}{x}\PY{p}{)} \PY{o}{\PYZhy{}} \PY{n}{x}\PY{o}{*}\PY{n}{np}\PY{o}{.}\PY{n}{sin}\PY{p}{(}\PY{n}{x}\PY{p}{)}
-              \PY{k}{return} \PY{n}{df}
+{\color{incolor}In [{\color{incolor}7}]:} \PY{k}{def} \PY{n+nf}{d\PYZus{}func}\PY{p}{(}\PY{n}{x}\PY{p}{)}\PY{p}{:}
+            \PY{n}{df} \PY{o}{=} \PY{n}{np}\PY{o}{.}\PY{n}{sin}\PY{p}{(}\PY{n}{x}\PY{p}{)} \PY{o}{+} \PY{n}{x}\PY{o}{*}\PY{n}{np}\PY{o}{.}\PY{n}{cos}\PY{p}{(}\PY{n}{x}\PY{p}{)} \PY{o}{+} \PY{n}{np}\PY{o}{.}\PY{n}{cos}\PY{p}{(}\PY{n}{x}\PY{p}{)} \PY{o}{\PYZhy{}} \PY{n}{x}\PY{o}{*}\PY{n}{np}\PY{o}{.}\PY{n}{sin}\PY{p}{(}\PY{n}{x}\PY{p}{)}
+            \PY{k}{return} \PY{n}{df}
 \end{Verbatim}
 
 
-    \subsubsection{\texorpdfstring{6-2. Define Tylor Approximation
-\(f(p) + f'(p)(x-p)\)}{6-2. Define Tylor Approximation f(p) + f'(p)(x-p)}}\label{define-tylor-approximation-fp-fpx-p}
+    \subsection{\texorpdfstring{Define Tylor Approximation
+\(f(p) + f'(p)(x-p)\)}{Define Tylor Approximation f(p) + f'(p)(x-p)}}\label{define-tylor-approximation-fp-fpx-p}
 
     \begin{Verbatim}[commandchars=\\\{\}]
-{\color{incolor}In [{\color{incolor}234}]:} \PY{k}{def} \PY{n+nf}{tylor}\PY{p}{(}\PY{n}{p}\PY{p}{,}\PY{n}{x}\PY{p}{)}\PY{p}{:}
-              \PY{n}{result} \PY{o}{=} \PY{n}{func}\PY{p}{(}\PY{n}{p}\PY{p}{)} \PY{o}{+} \PY{n}{d\PYZus{}func}\PY{p}{(}\PY{n}{p}\PY{p}{)} \PY{o}{*} \PY{p}{(}\PY{n}{x}\PY{o}{\PYZhy{}}\PY{n}{p}\PY{p}{)}
-              \PY{k}{return} \PY{n}{result}
+{\color{incolor}In [{\color{incolor}8}]:} \PY{k}{def} \PY{n+nf}{tylor}\PY{p}{(}\PY{n}{p}\PY{p}{,}\PY{n}{x}\PY{p}{)}\PY{p}{:}
+            \PY{n}{result} \PY{o}{=} \PY{n}{func}\PY{p}{(}\PY{n}{p}\PY{p}{)} \PY{o}{+} \PY{n}{d\PYZus{}func}\PY{p}{(}\PY{n}{p}\PY{p}{)} \PY{o}{*} \PY{p}{(}\PY{n}{x}\PY{o}{\PYZhy{}}\PY{n}{p}\PY{p}{)}
+            \PY{k}{return} \PY{n}{result}
 \end{Verbatim}
 
 
-    \subsection{7. Plot the Tylor approximation with the same domain of the
+    \section{Plot the Tylor approximation with the same domain of the
 original
-function}\label{plot-the-tylor-approximation-with-the-same-domain-of-the-original-function}
+function.}\label{plot-the-tylor-approximation-with-the-same-domain-of-the-original-function.}
 
     \begin{Verbatim}[commandchars=\\\{\}]
-{\color{incolor}In [{\color{incolor}238}]:} \PY{n}{origin\PYZus{}plot}\PY{p}{(}\PY{p}{)}
-          
-          \PY{n}{df1} \PY{o}{=} \PY{n}{tylor}\PY{p}{(}\PY{n}{p1}\PY{p}{,}\PY{n}{x}\PY{p}{)}
-          \PY{n}{df2} \PY{o}{=} \PY{n}{tylor}\PY{p}{(}\PY{n}{p2}\PY{p}{,}\PY{n}{x}\PY{p}{)}
-          \PY{n}{plt}\PY{o}{.}\PY{n}{plot}\PY{p}{(}\PY{n}{x}\PY{p}{,} \PY{n}{df1}\PY{p}{,} \PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{r}\PY{l+s+s1}{\PYZsq{}}\PY{p}{)}
-          \PY{n}{plt}\PY{o}{.}\PY{n}{plot}\PY{p}{(}\PY{n}{x}\PY{p}{,} \PY{n}{df2}\PY{p}{,} \PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{b}\PY{l+s+s1}{\PYZsq{}}\PY{p}{)}
+{\color{incolor}In [{\color{incolor}9}]:} \PY{n}{origin\PYZus{}plot}\PY{p}{(}\PY{p}{)}
+        
+        \PY{n}{df1} \PY{o}{=} \PY{n}{tylor}\PY{p}{(}\PY{n}{p1}\PY{p}{,}\PY{n}{x}\PY{p}{)}
+        \PY{n}{df2} \PY{o}{=} \PY{n}{tylor}\PY{p}{(}\PY{n}{p2}\PY{p}{,}\PY{n}{x}\PY{p}{)}
+        \PY{n}{plt}\PY{o}{.}\PY{n}{plot}\PY{p}{(}\PY{n}{x}\PY{p}{,} \PY{n}{df1}\PY{p}{,} \PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{r}\PY{l+s+s1}{\PYZsq{}}\PY{p}{)}
+        \PY{n}{plt}\PY{o}{.}\PY{n}{plot}\PY{p}{(}\PY{n}{x}\PY{p}{,} \PY{n}{df2}\PY{p}{,} \PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{b}\PY{l+s+s1}{\PYZsq{}}\PY{p}{)}
 \end{Verbatim}
 
 
 \begin{Verbatim}[commandchars=\\\{\}]
-{\color{outcolor}Out[{\color{outcolor}238}]:} [<matplotlib.lines.Line2D at 0x274d7ac97b8>]
+{\color{outcolor}Out[{\color{outcolor}9}]:} [<matplotlib.lines.Line2D at 0x1f29bbfae10>]
 \end{Verbatim}
             
     \begin{center}
-    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{output_21_1.png}
+    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{output_22_1.png}
     \end{center}
     { \hspace*{\fill} \\}
     
