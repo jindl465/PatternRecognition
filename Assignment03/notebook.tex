@@ -312,23 +312,22 @@
 \end{Verbatim}
 
 
-    \section{Compute distance based on
-L2-norm}\label{compute-distance-based-on-l2-norm}
+    \section{Compute distance based on L2-norm (x,
+(0,0))}\label{compute-distance-based-on-l2-norm-x-00}
 
     \begin{Verbatim}[commandchars=\\\{\}]
-{\color{incolor}In [{\color{incolor}3}]:} \PY{k}{def} \PY{n+nf}{distance\PYZus{}n2}\PY{p}{(}\PY{n}{x}\PY{p}{)}\PY{p}{:}
+{\color{incolor}In [{\color{incolor}3}]:} \PY{k}{def} \PY{n+nf}{distance}\PY{p}{(}\PY{n}{x}\PY{p}{)}\PY{p}{:}
         
-            \PY{n}{d} \PY{o}{=} \PY{n}{x} \PY{o}{*}\PY{o}{*} \PY{l+m+mi}{2}
+            \PY{n}{d} \PY{o}{=} \PY{p}{(}\PY{n}{x}\PY{p}{)} \PY{o}{*}\PY{o}{*} \PY{l+m+mi}{2}
         
             \PY{k}{return}\PY{p}{(}\PY{n}{d}\PY{p}{)}
 \end{Verbatim}
 
 
-    \section{Compute distance based on
-L1-norm}\label{compute-distance-based-on-l1-norm}
+    \section{Compute based on L1-norm}\label{compute-based-on-l1-norm}
 
     \begin{Verbatim}[commandchars=\\\{\}]
-{\color{incolor}In [{\color{incolor}4}]:} \PY{k}{def} \PY{n+nf}{distance\PYZus{}n1}\PY{p}{(}\PY{n}{x}\PY{p}{)}\PY{p}{:}
+{\color{incolor}In [{\color{incolor}4}]:} \PY{k}{def} \PY{n+nf}{norm\PYZus{}L1}\PY{p}{(}\PY{n}{x}\PY{p}{)}\PY{p}{:}
             
             \PY{n}{d} \PY{o}{=} \PY{n}{np}\PY{o}{.}\PY{n}{abs}\PY{p}{(}\PY{n}{x}\PY{p}{)}
             
@@ -356,7 +355,7 @@ L1-norm}\label{compute-distance-based-on-l1-norm}
 \end{Verbatim}
 
 
-    \section{Draw 100 images with label}\label{draw-100-images-with-label}
+    \section{Draw images with label}\label{draw-images-with-label}
 
     \begin{Verbatim}[commandchars=\\\{\}]
 {\color{incolor}In [{\color{incolor}6}]:} \PY{n}{f1} \PY{o}{=} \PY{n}{plt}\PY{o}{.}\PY{n}{figure}\PY{p}{(}\PY{l+m+mi}{1}\PY{p}{)}
@@ -390,10 +389,12 @@ L2-norm}\label{compute-sum-of-the-distance-based-on-l2-norm}
     \begin{Verbatim}[commandchars=\\\{\}]
 {\color{incolor}In [{\color{incolor}7}]:} \PY{n}{f2} \PY{o}{=} \PY{n}{plt}\PY{o}{.}\PY{n}{figure}\PY{p}{(}\PY{l+m+mi}{2}\PY{p}{)}
         
-        \PY{n}{im\PYZus{}average2}  \PY{o}{=} \PY{n}{np}\PY{o}{.}\PY{n}{zeros}\PY{p}{(}\PY{p}{(}\PY{n}{size\PYZus{}row} \PY{o}{*} \PY{n}{size\PYZus{}col}\PY{p}{,} \PY{l+m+mi}{10}\PY{p}{)}\PY{p}{,} \PY{n}{dtype}\PY{o}{=}\PY{n+nb}{float}\PY{p}{)}
+        \PY{n}{im\PYZus{}average}  \PY{o}{=} \PY{n}{np}\PY{o}{.}\PY{n}{zeros}\PY{p}{(}\PY{p}{(}\PY{n}{size\PYZus{}row} \PY{o}{*} \PY{n}{size\PYZus{}col}\PY{p}{,} \PY{l+m+mi}{10}\PY{p}{)}\PY{p}{,} \PY{n}{dtype}\PY{o}{=}\PY{n+nb}{float}\PY{p}{)}
+        \PY{n}{im\PYZus{}count} \PY{o}{=} \PY{n}{np}\PY{o}{.}\PY{n}{zeros}\PY{p}{(}\PY{l+m+mi}{10}\PY{p}{,} \PY{n}{dtype} \PY{o}{=} \PY{n+nb}{int}\PY{p}{)}
         
         \PY{k}{for} \PY{n}{i} \PY{o+ow}{in} \PY{n+nb}{range}\PY{p}{(}\PY{n}{num\PYZus{}image}\PY{p}{)}\PY{p}{:}
-            \PY{n}{im\PYZus{}average2}\PY{p}{[}\PY{p}{:}\PY{p}{,}\PY{n}{list\PYZus{}label}\PY{p}{[}\PY{n}{i}\PY{p}{]}\PY{p}{]} \PY{o}{+}\PY{o}{=} \PY{n}{distance\PYZus{}n2}\PY{p}{(}\PY{n}{list\PYZus{}image}\PY{p}{[}\PY{p}{:}\PY{p}{,}\PY{n}{i}\PY{p}{]}\PY{p}{)}
+            \PY{n}{im\PYZus{}average}\PY{p}{[}\PY{p}{:}\PY{p}{,}\PY{n}{list\PYZus{}label}\PY{p}{[}\PY{n}{i}\PY{p}{]}\PY{p}{]} \PY{o}{+}\PY{o}{=} \PY{n}{distance}\PY{p}{(}\PY{n}{list\PYZus{}image}\PY{p}{[}\PY{p}{:}\PY{p}{,}\PY{n}{i}\PY{p}{]}\PY{p}{)}
+            \PY{n}{im\PYZus{}count}\PY{p}{[}\PY{n}{list\PYZus{}label}\PY{p}{[}\PY{n}{i}\PY{p}{]}\PY{p}{]} \PY{o}{+}\PY{o}{=} \PY{l+m+mi}{1}
 \end{Verbatim}
 
 
@@ -408,8 +409,10 @@ L2-norm}\label{compute-sum-of-the-distance-based-on-l2-norm}
 
     \begin{Verbatim}[commandchars=\\\{\}]
 {\color{incolor}In [{\color{incolor}8}]:} \PY{k}{for} \PY{n}{i} \PY{o+ow}{in} \PY{n+nb}{range}\PY{p}{(}\PY{l+m+mi}{10}\PY{p}{)} \PY{p}{:}
-            \PY{n}{im\PYZus{}average2}\PY{p}{[}\PY{p}{:}\PY{p}{,}\PY{n}{i}\PY{p}{]} \PY{o}{=} \PY{n}{np}\PY{o}{.}\PY{n}{sqrt}\PY{p}{(}\PY{n}{im\PYZus{}average2}\PY{p}{[}\PY{p}{:}\PY{p}{,}\PY{n}{i}\PY{p}{]}\PY{p}{)}
-            \PY{n}{im\PYZus{}L2matrix} \PY{o}{=} \PY{n}{im\PYZus{}average2}\PY{p}{[}\PY{p}{:}\PY{p}{,}\PY{n}{i}\PY{p}{]}\PY{o}{.}\PY{n}{reshape}\PY{p}{(}\PY{p}{(}\PY{n}{size\PYZus{}row}\PY{p}{,}\PY{n}{size\PYZus{}col}\PY{p}{)}\PY{p}{)}
+            \PY{n}{im\PYZus{}average}\PY{p}{[}\PY{p}{:}\PY{p}{,}\PY{n}{i}\PY{p}{]} \PY{o}{=} \PY{n}{np}\PY{o}{.}\PY{n}{sqrt}\PY{p}{(}\PY{n}{im\PYZus{}average}\PY{p}{[}\PY{p}{:}\PY{p}{,}\PY{n}{i}\PY{p}{]}\PY{p}{)}
+            \PY{n}{im\PYZus{}count}\PY{p}{[}\PY{n}{i}\PY{p}{]} \PY{o}{=} \PY{n}{np}\PY{o}{.}\PY{n}{sqrt}\PY{p}{(}\PY{n}{im\PYZus{}count}\PY{p}{[}\PY{n}{i}\PY{p}{]}\PY{p}{)}
+            \PY{n}{im\PYZus{}average}\PY{p}{[}\PY{p}{:}\PY{p}{,}\PY{n}{i}\PY{p}{]} \PY{o}{/}\PY{o}{=} \PY{n}{im\PYZus{}count}\PY{p}{[}\PY{n}{i}\PY{p}{]}
+            \PY{n}{im\PYZus{}L2matrix} \PY{o}{=} \PY{n}{im\PYZus{}average}\PY{p}{[}\PY{p}{:}\PY{p}{,}\PY{n}{i}\PY{p}{]}\PY{o}{.}\PY{n}{reshape}\PY{p}{(}\PY{p}{(}\PY{n}{size\PYZus{}row}\PY{p}{,}\PY{n}{size\PYZus{}col}\PY{p}{)}\PY{p}{)}
             
             \PY{n}{plt}\PY{o}{.}\PY{n}{subplot}\PY{p}{(}\PY{l+m+mi}{2}\PY{p}{,}\PY{l+m+mi}{5}\PY{p}{,}\PY{n}{i}\PY{o}{+}\PY{l+m+mi}{1}\PY{p}{)}
             \PY{n}{plt}\PY{o}{.}\PY{n}{title}\PY{p}{(}\PY{n}{i}\PY{p}{)}
@@ -434,10 +437,12 @@ L1-norm}\label{compute-the-sum-of-distance-based-on-l1-norm}
     \begin{Verbatim}[commandchars=\\\{\}]
 {\color{incolor}In [{\color{incolor}9}]:} \PY{n}{f3} \PY{o}{=} \PY{n}{plt}\PY{o}{.}\PY{n}{figure}\PY{p}{(}\PY{l+m+mi}{3}\PY{p}{)}
         
-        \PY{n}{im\PYZus{}average}  \PY{o}{=} \PY{n}{np}\PY{o}{.}\PY{n}{zeros}\PY{p}{(}\PY{p}{(}\PY{n}{size\PYZus{}row} \PY{o}{*} \PY{n}{size\PYZus{}col}\PY{p}{,} \PY{l+m+mi}{10}\PY{p}{)}\PY{p}{,} \PY{n}{dtype}\PY{o}{=}\PY{n+nb}{float}\PY{p}{)}
+        \PY{n}{im\PYZus{}average2}  \PY{o}{=} \PY{n}{np}\PY{o}{.}\PY{n}{zeros}\PY{p}{(}\PY{p}{(}\PY{n}{size\PYZus{}row} \PY{o}{*} \PY{n}{size\PYZus{}col}\PY{p}{,} \PY{l+m+mi}{10}\PY{p}{)}\PY{p}{,} \PY{n}{dtype}\PY{o}{=}\PY{n+nb}{float}\PY{p}{)}
+        \PY{n}{im\PYZus{}count2} \PY{o}{=} \PY{n}{np}\PY{o}{.}\PY{n}{zeros}\PY{p}{(}\PY{l+m+mi}{10}\PY{p}{,} \PY{n}{dtype}\PY{o}{=}\PY{n+nb}{int}\PY{p}{)}
         
         \PY{k}{for} \PY{n}{i} \PY{o+ow}{in} \PY{n+nb}{range}\PY{p}{(}\PY{n}{num\PYZus{}image}\PY{p}{)}\PY{p}{:}
-            \PY{n}{im\PYZus{}average}\PY{p}{[}\PY{p}{:}\PY{p}{,}\PY{n}{list\PYZus{}label}\PY{p}{[}\PY{n}{i}\PY{p}{]}\PY{p}{]} \PY{o}{+}\PY{o}{=} \PY{n}{distance\PYZus{}n1}\PY{p}{(}\PY{n}{list\PYZus{}image}\PY{p}{[}\PY{p}{:}\PY{p}{,}\PY{n}{i}\PY{p}{]}\PY{p}{)}
+            \PY{n}{im\PYZus{}average2}\PY{p}{[}\PY{p}{:}\PY{p}{,}\PY{n}{list\PYZus{}label}\PY{p}{[}\PY{n}{i}\PY{p}{]}\PY{p}{]} \PY{o}{+}\PY{o}{=} \PY{n}{norm\PYZus{}L1}\PY{p}{(}\PY{n}{list\PYZus{}image}\PY{p}{[}\PY{p}{:}\PY{p}{,}\PY{n}{i}\PY{p}{]}\PY{p}{)}
+            \PY{n}{im\PYZus{}count2}\PY{p}{[}\PY{n}{list\PYZus{}label}\PY{p}{[}\PY{n}{i}\PY{p}{]}\PY{p}{]} \PY{o}{+}\PY{o}{=} \PY{l+m+mi}{1} 
 \end{Verbatim}
 
 
@@ -452,7 +457,8 @@ L1-norm}\label{compute-the-sum-of-distance-based-on-l1-norm}
 
     \begin{Verbatim}[commandchars=\\\{\}]
 {\color{incolor}In [{\color{incolor}10}]:} \PY{k}{for} \PY{n}{i} \PY{o+ow}{in} \PY{n+nb}{range}\PY{p}{(}\PY{l+m+mi}{10}\PY{p}{)} \PY{p}{:}
-             \PY{n}{im\PYZus{}L1matrix} \PY{o}{=} \PY{n}{im\PYZus{}average}\PY{p}{[}\PY{p}{:}\PY{p}{,}\PY{n}{i}\PY{p}{]}\PY{o}{.}\PY{n}{reshape}\PY{p}{(}\PY{p}{(}\PY{n}{size\PYZus{}row}\PY{p}{,}\PY{n}{size\PYZus{}col}\PY{p}{)}\PY{p}{)}
+             \PY{n}{im\PYZus{}average2}\PY{p}{[}\PY{p}{:}\PY{p}{,}\PY{n}{i}\PY{p}{]} \PY{o}{/}\PY{o}{=} \PY{n}{im\PYZus{}count2}\PY{p}{[}\PY{n}{i}\PY{p}{]}
+             \PY{n}{im\PYZus{}L1matrix} \PY{o}{=} \PY{n}{im\PYZus{}average2}\PY{p}{[}\PY{p}{:}\PY{p}{,}\PY{n}{i}\PY{p}{]}\PY{o}{.}\PY{n}{reshape}\PY{p}{(}\PY{p}{(}\PY{n}{size\PYZus{}row}\PY{p}{,}\PY{n}{size\PYZus{}col}\PY{p}{)}\PY{p}{)}
              
              \PY{n}{plt}\PY{o}{.}\PY{n}{subplot}\PY{p}{(}\PY{l+m+mi}{2}\PY{p}{,}\PY{l+m+mi}{5}\PY{p}{,}\PY{n}{i}\PY{o}{+}\PY{l+m+mi}{1}\PY{p}{)}
              \PY{n}{plt}\PY{o}{.}\PY{n}{title}\PY{p}{(}\PY{n}{i}\PY{p}{)}
